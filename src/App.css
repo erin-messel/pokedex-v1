@@ -1,0 +1,264 @@
+:root {
+  --poison:   #9353cb;
+  --psychic:  #ea6a89;
+  --steel:    #6caec9;
+  --rock:     #aba682;
+  --normal:   #828282;
+  --fairy:    #e38ce1;
+  --ice:      #46c8c6;
+  --dark:     #504647;
+  --ground:   #a4723d;
+  --dragon:   #586dbe;
+  --water:    #309ae4;
+  --ghost:    #724470;
+  --electric: #e1bc28;
+  --flying:   #75abd2;
+  --bug:      #9fa026;
+  --fighting: #e69021;
+  --grass:    #44983a;
+  --fire:     #e55f3d;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.mainWrapper {
+  display:grid;
+  grid-template-columns:20rem 1fr;
+  padding:1rem;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav.fullList ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+
+nav.fullList ul button {
+  border:none;
+  padding:.25rem 1rem;
+  display:block;
+  width:100%;
+  border:none;
+  text-align:left;
+}
+
+.entry {
+  border:1px solid #ccc;
+}
+img {
+  max-width:100%;
+}
+
+.filtersWrap {
+  padding-right:2rem;
+}
+
+.resultsGrid button.btn {
+  border-radius:1rem;
+  background:#eee;
+  text-decoration:none;
+  color:#333;
+  position:relative;
+  text-align:left;
+  padding:1rem;
+  top:0;
+  transition:top .2s ease;
+}
+
+.resultsGrid button.btn:hover,
+.resultsGrid button.btn:focus {
+  top:-.25rem;
+}
+
+.resultsGrid button.btn > div {
+  display:grid;
+  grid-template-columns: 1fr 100px;
+  grid-template-areas:  "number img"
+                        "name img"
+                        "types img";
+}
+
+.resultsGrid button.btn .name {
+  grid-area:name;
+  align-self:end;
+  font-size:1.5rem;
+  font-weight:200;
+}
+
+.resultsGrid button.btn .number {
+  grid-area:number;
+  font-weight:700;
+}
+
+.resultsGrid button.btn ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  grid-area:types;
+  font-size:.75rem;
+  line-height:1;
+  align-self:end;
+}
+
+.resultsGrid button.btn ul li {
+  display:inline-block;
+  margin:.25rem .25rem 0 0
+}
+
+.resultsGrid button.btn ul li .bubble {
+  padding:.25rem .5rem;
+}
+
+.resultsGrid button.btn img {
+  grid-area:img;
+}
+
+.mainContent article {
+  display:grid;
+  grid-template-columns: 30% 1fr;
+  grid-gap:2rem;
+}
+
+#pokeDetail {
+  width:40rem;
+  max-width:100%;
+}
+
+#pokeDetail .offcanvas-header {
+  position:absolute;
+  top:0;
+  width:100%;
+  left:0;
+}
+
+#pokeDetail .offcanvas-body {
+  padding:0;
+}
+
+
+.thumb {
+  background:#1e2248;
+  /* border-radius:1rem; */
+  align-self:flex-start;
+}
+
+.thumb.Fire {background:var(--fire)}
+.thumb.Water {background:var(--water)}
+.thumb.Grass {background:var(--grass)}
+.thumb.Electric {background:var(--electric)}
+.thumb.Bug {background:var(--bug)}
+.thumb.Flying {background:var(--flying)}
+.thumb.Rock {background:var(--rock)}
+.thumb.Normal {background:var(--normal)}
+.thumb.Poison {background:var(--poison)}
+.thumb.Ground {background:var(--ground)}
+.thumb.Fairy {background:var(--fairy)}
+.thumb.Fighting {background:var(--fighting)}
+.thumb.Psychic {background:var(--psychic)}
+.thumb.Ghost {background:var(--ghost)}
+.thumb.Ice {background:var(--ice)}
+.thumb.Dragon {background:var(--dragon)}
+
+#pokeDetail .offcanvas-body .dataMain {
+  padding:2rem;
+}
+
+.typeWrap ul,
+.weaknessWrap ul {
+  margin:0;
+  padding:0;
+  list-style:none;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.typeWrap ul li,
+.weaknessWrap ul li {
+  margin-right:.25rem;
+}
+
+.bubble {
+  display:block;
+  background:#000;
+  color:#fff;
+  border-radius:.25rem;
+  line-height:1;
+  padding:.5rem 1rem;
+}
+
+.Bug > .bubble {background:var(--bug);}
+.Dark > .bubble {background:var(--dark);}
+.Dragon > .bubble {background:var(--dragon);}
+.Fairy > .bubble {background:var(--fairy);}
+.Fighting > .bubble {background:var(--fighting);}
+.Fire > .bubble {background:var(--fire);}
+.Flying > .bubble {background:var(--flying);}
+.Electric > .bubble {background:var(--electric);}
+.Ghost > .bubble {background:var(--ghost);}
+.Grass > .bubble {background:var(--grass);}
+.Ground > .bubble {background:var(--ground);}
+.Ice > .bubble {background:var(--ice);}
+.Normal > .bubble {background:var(--normal);}
+.Poison > .bubble {background:var(--poison);}
+.Psychic > .bubble {background:var(--psychic);}
+.Rock > .bubble {background:var(--rock);}
+.Steel > .bubble {background:var(--steel);}
+.Water > .bubble {background:var(--water);}
+
+.statsWrap {
+  display:grid;
+  grid-template-columns: 1fr 60%;
+  grid-column-gap:2rem;
+}
+
+.statsWrap h3 {
+  grid-column: span 2;
+}
+
+.statsWrap .dataDisplay,
+.statsWrap .dataViz {
+}
